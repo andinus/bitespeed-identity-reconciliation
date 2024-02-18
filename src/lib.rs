@@ -104,13 +104,13 @@ pub async fn handler_identify(
 
         // if we have multiple "primary" rows then all except one needs to
         // become secondary. the oldest contact will remain "primary".
-        for i in 1..primary_contact.len() {
+        for contact in primary_contact.iter().skip(1) {
             sqlx::query(
                 "UPDATE contacts SET link_precedence = 'secondary', linked_id = ?
                  WHERE id = ?",
             )
             .bind(primary_contact_id)
-            .bind(&primary_contact[i].id)
+            .bind(contact.id)
             .execute(&mut *tx)
             .await
             .unwrap();

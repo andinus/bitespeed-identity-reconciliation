@@ -7,7 +7,7 @@ async fn main() {
     // connect to the database.
     let database_url = "sqlite://bitespeed.sqlite3";
     let pool = SqlitePoolOptions::new()
-        .connect(&database_url)
+        .connect(database_url)
         .await
         .unwrap_or_else(|_| panic!("connect to sqlite db: {}", database_url));
 
