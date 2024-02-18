@@ -1,0 +1,30 @@
+[package]
+name = 'bitespeed-identity-reconciliation'
+version = '0.1.0'
+edition = '2021'
+authors = ['Andinus <andinus@nand.sh>']
+repository = 'https://github.com/andinus/bitespeed-identity-reconciliation'
+
+[dependencies]
+serde_json = '1.0'
+tower = '0.4'
+time = '0.3'
+axum = '0.7'
+tower-http = '0.5'
+
+[dependencies.serde]
+version = '1.0'
+features = ['derive']
+
+[dependencies.tokio]
+version = '1.0'
+features = ['full']
+
+[dependencies.sqlx]
+version = '0.7'
+features = [
+    'runtime-tokio',
+    'sqlite',
+    'macros',
+    'time',
+]

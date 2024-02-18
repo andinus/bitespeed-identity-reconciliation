@@ -1,0 +1,17 @@
+#+title: Bitespeed Backend Task: Identity Reconciliation
+
+- Tech Stack: Rust & SQLite
+- Hosted Endpoint: ~https://bitespeed-task.unfla.me/identify~
+
+Note: The database should be empty when you try to hit it.
+
+* Testing
+
+Call the ~/identify~ endpoint like so to test it:
+
+#+begin_src bash
+curl -X POST \
+     -H "Content-Type: application/json" \
+     -d '{"email":"george@hillvalley.edu", "phoneNumber":"717171"}' \
+     https://bitespeed-task.unfla.me/identify | jq
+#+end_src
