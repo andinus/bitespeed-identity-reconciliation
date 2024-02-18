@@ -5,6 +5,16 @@
 
 Note: The database should be empty when you try to hit it.
 
+If you want it test it locally then you must first create the database with
+~sqlite3 bitespeed.sql < schema.sql~ and then run ~cargo run~. See
+https://www.rust-lang.org/tools/install for installation details.
+
+* Navigating the code
+
+- ~schema.sql~: Schema for SQLite database.
+- ~src/main.rs~: Creates and starts the axum web service.
+- ~src/lib.rs~: Contains code for ~/identify~ endpoint.
+
 * Testing
 
 Call the ~/identify~ endpoint like so to test it:
