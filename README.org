@@ -6,7 +6,7 @@
 Note: The database should be empty when you try to hit it.
 
 If you want it test it locally then you must first create the database with
-~sqlite3 bitespeed.sql < schema.sql~ and then run ~cargo run~. See
+~sqlite3 bitespeed.sqlite3 < schema.sql~ and then run ~cargo run~. See
 https://www.rust-lang.org/tools/install for installation details.
 
 * Navigating the code
